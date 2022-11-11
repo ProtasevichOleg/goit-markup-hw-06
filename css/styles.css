@@ -486,6 +486,7 @@ img {
 .footer-first-column {
   width: 231px;
   margin-right: 70px;
+  flex-shrink: 0;
 }
 
 .footer .logo-link {
