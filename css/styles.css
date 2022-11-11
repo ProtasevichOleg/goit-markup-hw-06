@@ -5,7 +5,7 @@
   --primary-text-color: #757575;
   --title-text-color: #212121;
   --accent-color: #2196f3;
-  --hero-btn-active-color: #188ce8;
+  --main-btn-active-color: #188ce8;
   --white-text-color: #ffffff;
   --active-button-text-color: #ffffff;
   --whatwedo-overlay-bg-color: rgba(47, 48, 58, 0.8);
@@ -225,6 +225,7 @@ img {
 
 .hero-btn {
   padding: 10px 32px;
+  min-width: 200px;
 
   font-family: inherit;
   font-weight: 700;
@@ -245,7 +246,7 @@ img {
 
 .hero-btn:hover,
 .hero-btn:focus {
-  background-color: var(--hero-btn-active-color);
+  background-color: var(--main-btn-active-color);
 }
 
 /* --------------FEATURES----------------- */
@@ -525,12 +526,17 @@ img {
   color: var(--accent-color);
 }
 
-.footer-join-title {
+.footer-second-column {
+  margin-right: 93px;
+}
+
+.footer-title {
   font-size: 14px;
   line-height: calc(16 / 14);
   letter-spacing: 0.03em;
   text-transform: uppercase;
   margin-bottom: 20px;
+  user-select: none;
 
   color: var(--white-text-color);
 }
@@ -540,6 +546,76 @@ img {
   background-color: var(--unactive-footer-svg-bg-color);
 }
 
+.footer-third-column {
+  width: 100%;
+}
+
+.footer-subscribe-form {
+  display: flex;
+  height: 50px;
+  gap: 12px;
+}
+
+.footer-email-input {
+  flex-grow: 1;
+  padding-left: 16px;
+
+  line-height: 1.25;
+  letter-spacing: 0.03em;
+
+  color: var(--white-text-color);
+  background-color: transparent;
+  border: 1px solid;
+  border-color: rgba(255, 255, 255, 0.3);
+  border-radius: 4px;
+  outline: transparent;
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.15));
+  transition: border-color var(--main-transition);
+}
+
+.footer-email-input:focus {
+  border-color: var(--accent-color);
+}
+
+.submit-btn {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  width: 200px;
+
+  font-family: inherit;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 1.88;
+  letter-spacing: 0.06em;
+  border: transparent;
+  border-radius: 4px;
+  cursor: pointer;
+
+  transition: background-color var(--main-transition);
+
+  background-color: var(--accent-color);
+  color: var(--active-button-text-color);
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+  border-radius: 4px;
+}
+
+.footer .submit-btn {
+  /* padding: 0; */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.submit-btn:hover,
+.submit-btn:focus {
+  background-color: var(--main-btn-active-color);
+}
+
+.footer-send-icon {
+  fill: var(--active-button-text-color);
+}
+
 /* ----------------MODAL------------------- */
 
 .orderaservice-backdrop {
@@ -547,6 +623,7 @@ img {
   height: 100%;
   background-color: rgba(0, 0, 0, 0.2);
   position: fixed;
+  z-index: 2;
   top: 0;
   left: 0;
   transition: opacity var(--main-transition), visibility var(--main-transition);
@@ -555,13 +632,14 @@ img {
 .orderaservice-modal {
   width: 528px;
   min-height: 581px;
-  background-color: var(--main-bg-color);
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%) scale(1);
   transition: transform var(--main-transition);
+  padding: 40px;
 
+  background-color: var(--main-bg-color);
   box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
     0px 2px 1px rgba(0, 0, 0, 0.2);
   border-radius: 4px;
@@ -571,8 +649,15 @@ img {
   transform: translate(-50%, -50%) scale(1.1);
 }
 
+.orderaservice-backdrop.is-hidden {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
 .orderaservice-closebutton {
   position: absolute;
+  padding: 0;
   top: 14px;
   right: 14px;
   display: flex;
@@ -586,10 +671,158 @@ img {
   cursor: pointer;
 }
 
-.orderaservice-backdrop.is-hidden {
+.orderaservice-modal-title {
+  margin-bottom: 12px;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 1.15;
+  text-align: center;
+  letter-spacing: 0.03em;
+}
+
+.orderaservice-label-name {
+  display: block;
+  margin-bottom: 4px;
+  font-size: 12px;
+  line-height: 14px;
+  letter-spacing: 0.01em;
+  user-select: none;
+}
+
+.orderaservice-modal-list {
+  margin-bottom: 20px;
+}
+
+.orderaservice-list-item:not(:last-child) {
+  margin-bottom: 10px;
+}
+
+.orderaservice-field-wrap {
+  position: relative;
+}
+
+.icon-modal {
+  position: absolute;
+  top: 50%;
+  left: 12px;
+  transform: translateY(-50%);
+  transition: fill var(--main-transition);
+}
+
+.orderaservice-modal-input:focus + .icon-modal {
+  fill: var(--accent-color);
+}
+
+.orderaservice-modal-field {
+  display: block;
+  width: 100%;
+  font-size: 12px;
+  line-height: 14px;
+  letter-spacing: 0.01em;
+  border: 1px solid;
+  border-color: rgba(33, 33, 33, 0.2);
+  border-radius: 4px;
+  outline: transparent;
+  transition: border-color var(--main-transition);
+}
+
+.orderaservice-modal-field:focus {
+  border-color: var(--accent-color);
+}
+
+.orderaservice-modal-input {
+  height: 40px;
+  padding-left: 42px;
+}
+
+.orderaservice-modal-textarea {
+  resize: none;
+  height: 120px;
+  padding: 12px 16px;
+}
+
+.terms-field-wrap {
+  display: block;
+  padding-left: 14px;
+  margin-bottom: 30px;
+}
+
+.orderaservice-checkbox-label {
+  position: relative;
+
+  font-size: 14px;
+  line-height: 1.71;
+  letter-spacing: 0.03em;
+}
+
+.orderaservice-terms-text {
+  margin-left: 22px;
+  user-select: none;
+}
+
+.orderaservice-terms-link {
+  color: var(--accent-color);
+  text-decoration-skip-ink: none;
+}
+
+.terms-icon-unchecked {
+  position: absolute;
+  top: 50%;
+  left: 0px;
+  transform: translateY(-50%);
+  transition: color var(--main-transition);
+  fill: currentColor;
+  color: var(--title-text-color);
+}
+
+.terms-icon-checked {
+  position: absolute;
+  top: 50%;
+  left: 0px;
+  transform: translateY(-50%);
+  background-color: var(--accent-color);
+  border-color: #ffffff;
+  border-radius: 2px;
+  color: var(--white-text-color);
+  fill: currentColor;
+}
+
+.orderaservice-checkbox-engine {
+  position: absolute;
+  top: 57%;
+  left: 2.5px;
+  transform: translateY(-50%);
+  white-space: nowrap;
+  overflow: hidden;
+  border: 0;
+  padding: 0;
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  margin: -1px;
+}
+
+.orderaservice-checkbox-engine:checked ~ .terms-icon-unchecked {
   opacity: 0;
-  visibility: hidden;
-  pointer-events: none;
+  transform: translateY(-50%);
+}
+
+.orderaservice-checkbox-engine:not(:checked) ~ .terms-icon-checked {
+  opacity: 0;
+  transform: translateY(-50%);
+}
+
+.orderaservice-checkbox-engine:focus ~ .terms-icon-unchecked {
+  color: var(--accent-color);
+}
+
+.submitbutton-wrap {
+  display: flex;
+  justify-content: center;
+}
+
+.submitbutton-wrap .submit-btn {
+  text-align: center;
+  display: block;
 }
 
 /* --------------PORTFOLIO----------------- */

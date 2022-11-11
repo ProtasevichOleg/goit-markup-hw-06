@@ -424,7 +424,7 @@
                 </svg>
               </a>
             </li>
-            <li class="regularclients-item" width="106" height="60">
+            <li class="regularclients-item">
               <a
                 href=""
                 class="regularclients-link link outline-remover"
@@ -508,7 +508,7 @@
           </address>
         </div>
         <div class="footer-second-column">
-          <h2 class="footer-join-title">Приєднуйтесь</h2>
+          <h2 class="footer-title">Приєднуйтесь</h2>
           <ul class="footer-soc-list soc-list list">
             <li class="footer-soc-item soc-item">
               <a
@@ -552,6 +552,24 @@
             </li>
           </ul>
         </div>
+        <div class="footer-third-column">
+          <h2 class="footer-title">
+            <label for="footer-email-input">Підпишіться на розсилку</label>
+          </h2>
+          <form class="footer-subscribe-form">
+            <input
+              type="email"
+              name="email"
+              class="footer-email-input"
+              id="footer-email-input"
+              placeholder="E-mail"
+            /><button type="submit" class="submit-btn">
+              Підписатися<svg class="footer-send-icon" width="24" height="24">
+                <use href="./images/icon-sprite.svg#icon-footer-send"></use>
+              </svg>
+            </button>
+          </form>
+        </div>
       </div>
     </footer>
     <!-- MODAL -->
@@ -562,6 +580,79 @@
             <use href="./images/icon-sprite.svg#icon-close-button"></use>
           </svg>
         </button>
+        <p class="orderaservice-modal-title title">Залиште свої дані, ми вам передзвонимо</p>
+        <form>
+          <ul class="orderaservice-modal-list list">
+            <li class="orderaservice-list-item">
+              <label class="orderaservice-input-label"
+                ><span class="orderaservice-label-name">Ім'я</span
+                ><span class="orderaservice-field-wrap">
+                  <input
+                    type="text"
+                    name="name"
+                    class="orderaservice-modal-field orderaservice-modal-input"
+                    required
+                  />
+                  <svg class="icon-modal" width="18" height="18">
+                    <use href="./images/icon-sprite.svg#icon-modal-name"></use>
+                  </svg> </span
+              ></label>
+            </li>
+            <li class="orderaservice-list-item">
+              <label class="orderaservice-input-label"
+                ><span class="orderaservice-label-name">Телефон</span
+                ><span class="orderaservice-field-wrap">
+                  <input
+                    type="tel"
+                    name="phone"
+                    class="orderaservice-modal-field orderaservice-modal-input"
+                    required />
+                  <svg class="icon-modal" width="18" height="18">
+                    <use href="./images/icon-sprite.svg#icon-modal-tel"></use></svg></span
+              ></label>
+            </li>
+            <li class="orderaservice-list-item">
+              <label class="orderaservice-input-label"
+                ><span class="orderaservice-label-name">Пошта</span
+                ><span class="orderaservice-field-wrap"
+                  ><input
+                    type="email"
+                    name="email"
+                    class="orderaservice-modal-field orderaservice-modal-input"
+                    required /><svg class="icon-modal" width="18" height="18">
+                    <use href="./images/icon-sprite.svg#icon-modal-email"></use></svg></span
+              ></label>
+            </li>
+            <li class="orderaservice-list-item">
+              <label class="orderaservice-input-label"
+                ><span class="orderaservice-label-name">Коментар</span
+                ><textarea
+                  placeholder="Введіть текст"
+                  name="coment"
+                  class="orderaservice-modal-field orderaservice-modal-textarea"
+                ></textarea>
+              </label>
+            </li>
+          </ul>
+          <div class="terms-field-wrap">
+            <label class="orderaservice-checkbox-label">
+              <input type="checkbox" value="terms" class="orderaservice-checkbox-engine" required />
+              <svg class="terms-icon-unchecked" width="16" height="15">
+                <use href="./images/icon-sprite.svg#icon-modal-checkbox-empty"></use>
+              </svg>
+              <svg class="terms-icon-checked" width="16" height="15">
+                <use href="./images/icon-sprite.svg#icon-modal-checkbox"></use>
+              </svg>
+              <span class="orderaservice-terms-text">
+                Погоджуюся з розсилкою та приймаю
+                <a href="" class="orderaservice-terms-link">Умови договору</a>
+              </span>
+            </label>
+          </div>
+          <div class="submitbutton-wrap">
+            <button type="submit" class="submit-btn">Відправити</button>
+          </div>
+        </form>
       </div>
     </div>
     <!-- Script -->
